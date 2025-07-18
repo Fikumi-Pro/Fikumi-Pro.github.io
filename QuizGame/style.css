@@ -305,3 +305,8 @@ button:hover {
 .side-menu .quiz-item:hover {
     color: #666
 }
+
+.home-screen .quiz-item {
+    display: block;
+
+}
