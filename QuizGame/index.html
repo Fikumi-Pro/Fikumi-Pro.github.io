@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="home-screen" id="home-menu">
+        <h1>Welcome!</h1>
+        <p>Choose a quiz!</p>
+        <a class="quiz-item" href="/general-quiz.html">General Quiz</a>
+        <a class="quiz-item" href="/german-quiz.html">German Quiz</a>
+        <a class="quiz-item" href="/french-quiz.html">French Quiz</a>
+        <a class="quiz-item" href="/polish-quiz.html">Polish Quiz</a>
+        <a href=""></a>
+    </div>
+
+    <script>
+        const homeScreen = document.getElementById('home-menu');
+        homeScreen.addEventListener('mousemove', (e) => {
+            const rect = homeScreen.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = ((y - centerY) / centerY) * 10;
+            const rotateY = ((x - centerX) / centerX) * -10;
+
+            homeScreen.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+    </script>
+
+</body>
+
+</html>
